@@ -8,7 +8,7 @@ def url_markup(videoid, duration, user_id, query, query_type):
     buttons = [
         [
             InlineKeyboardButton(
-                text="❮",
+                text="⋞",
                 callback_data=f"slider B|{query_type}|{query}|{user_id}",
             ),
             InlineKeyboardButton(
@@ -20,7 +20,7 @@ def url_markup(videoid, duration, user_id, query, query_type):
                 callback_data=f"Choose {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="❯",
+                text="⋟",
                 callback_data=f"slider F|{query_type}|{query}|{user_id}",
             ),
         ],
@@ -42,11 +42,11 @@ def url_markup2(videoid, duration, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="⍟ 𝙼𝚄𝚂𝙸𝙲 ​⍟",
+                text="Music",
                 callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="⍟ 𝚅𝙸𝙳𝙴𝙾 ​⍟",
+                text="Video",
                 callback_data=f"Choose {videoid}|{duration}|{user_id}",
             ),
         ],
@@ -96,13 +96,13 @@ def search_markup(
         ],
         [
             InlineKeyboardButton(
-                text="❮❮", callback_data=f"popat 1|{query}|{user_id}"
+                text="⋞⋞", callback_data=f"popat 1|{query}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="Close", callback_data=f"forceclose {query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="❯❯", callback_data=f"popat 1|{query}|{user_id}"
+                text="⋟⋟", callback_data=f"popat 1|{query}|{user_id}"
             ),
         ],
     ]
@@ -150,13 +150,13 @@ def search_markup2(
         ],
         [
             InlineKeyboardButton(
-                text="❮❮", callback_data=f"popat 2|{query}|{user_id}"
+                text="⋞⋞", callback_data=f"popat 2|{query}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="Close", callback_data=f"forceclose {query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="❯❯", callback_data=f"popat 2|{query}|{user_id}"
+                text="⋟⋟", callback_data=f"popat 2|{query}|{user_id}"
             ),
         ],
     ]
