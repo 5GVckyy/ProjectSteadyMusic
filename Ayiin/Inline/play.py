@@ -26,11 +26,11 @@ def url_markup(videoid, duration, user_id, query, query_type):
         ],
         [
             InlineKeyboardButton(
-                text="⍟ 𝙼𝙾𝚁𝙴 ⍟",
+                text="More",
                 callback_data=f"Search {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​",
+                text="Close​",
                 callback_data=f"forceclose {query}|{user_id}",
             ),
         ],
@@ -52,7 +52,7 @@ def url_markup2(videoid, duration, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​",
+                text="Close​",
                 callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
@@ -99,7 +99,7 @@ def search_markup(
                 text="❮❮", callback_data=f"popat 1|{query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data=f"forceclose {query}|{user_id}"
+                text="Close", callback_data=f"forceclose {query}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="❯❯", callback_data=f"popat 1|{query}|{user_id}"
@@ -153,7 +153,7 @@ def search_markup2(
                 text="❮❮", callback_data=f"popat 2|{query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data=f"forceclose {query}|{user_id}"
+                text="Close", callback_data=f"forceclose {query}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="❯❯", callback_data=f"popat 2|{query}|{user_id}"
@@ -173,9 +173,9 @@ def secondary_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⍟ 𝙼𝙾𝚁𝙴 ​⍟", callback_data=f"other {videoid}|{user_id}"
+                text="More", callback_data=f"other {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data=f"close"),
+            InlineKeyboardButton(text="Close", callback_data=f"close"),
         ],
     ]
     return buttons
@@ -190,7 +190,7 @@ def secondary_markup2(videoid, user_id):
             InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [
-            InlineKeyboardButton(text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟", callback_data=f"close"),
+            InlineKeyboardButton(text="Close", callback_data=f"close"),
         ],
     ]
     return buttons
@@ -202,12 +202,6 @@ def primary_markup(videoid, user_id, current_time, total_time):
     db_mem[videoid]["check"] = 2
     buttons = [
         [
-            InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
             InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
             InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
             InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
@@ -215,9 +209,9 @@ def primary_markup(videoid, user_id, current_time, total_time):
         ],
         [
             InlineKeyboardButton(
-                text="⍟ 𝙼𝙾𝚁𝙴 ​⍟", callback_data=f"other {videoid}|{user_id}"
+                text="More", callback_data=f"other {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data=f"close"),
+            InlineKeyboardButton(text="Close​", callback_data=f"close"),
         ],
     ]
     return buttons
@@ -226,12 +220,6 @@ def primary_markup(videoid, user_id, current_time, total_time):
 def timer_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
-            InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
             InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
             InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
             InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
@@ -239,9 +227,9 @@ def timer_markup(videoid, user_id, current_time, total_time):
         ],
         [
             InlineKeyboardButton(
-                text="⍟ 𝙼𝙾𝚁𝙴 ​⍟", callback_data=f"other {videoid}|{user_id}"
+                text="More", callback_data=f"other {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data=f"close"),
+            InlineKeyboardButton(text="Close", callback_data=f"close"),
         ],
     ]
     return buttons
@@ -253,18 +241,12 @@ def audio_markup(videoid, user_id, current_time, total_time):
     db_mem[videoid]["check"] = 2
     buttons = [
         [
-            InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
             InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
             InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
             InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
             InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
-        [InlineKeyboardButton(text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data=f"close")],
+        [InlineKeyboardButton(text="Close", callback_data=f"close")],
     ]
     return buttons
 
@@ -272,18 +254,12 @@ def audio_markup(videoid, user_id, current_time, total_time):
 def audio_timer_markup_start(videoid, user_id, current_time, total_time):
     buttons = [
         [
-            InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
             InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
             InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
             InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
             InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
-        [InlineKeyboardButton(text="⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data=f"close")],
+        [InlineKeyboardButton(text="Close", callback_data=f"close")],
     ]
     return buttons
 
@@ -296,6 +272,6 @@ audio_markup2 = InlineKeyboardMarkup(
             InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
             InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
-        [InlineKeyboardButton("⍟ 𝙲𝙻𝙾𝚂𝙴 ⍟​", callback_data="close")],
+        [InlineKeyboardButton("Close​", callback_data="close")],
     ]
 )
