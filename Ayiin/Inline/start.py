@@ -199,8 +199,8 @@ def setting_markup():
             ),
         ],
         [
-            InlineKeyboardButton(text="•Cʟᴏsᴇ•​", callback_data="close"),
-            InlineKeyboardButton(text="•Bᴀᴄᴋ​•​", callback_data="okaybhai"),
+            InlineKeyboardButton(text="Close​", callback_data="close"),
+            InlineKeyboardButton(text="Back", callback_data="okaybhai"),
         ],
     ]
     return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
@@ -226,7 +226,7 @@ def volmarkup():
                 text="🔽 Custom Volume 🔽", callback_data="Custommarkup"
             )
         ],
-        [InlineKeyboardButton(text="•Bᴀᴄᴋ​•", callback_data="settingm")],
+        [InlineKeyboardButton(text="Back", callback_data="settingm")],
     ]
     return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
 
@@ -261,7 +261,7 @@ def usermarkup():
                 text="📋 Users Lists", callback_data="USERLIST"
             )
         ],
-        [InlineKeyboardButton(text="•Bᴀᴄᴋ​•​", callback_data="settingm")],
+        [InlineKeyboardButton(text="Back​", callback_data="settingm")],
     ]
     return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
 
@@ -276,6 +276,6 @@ def dashmarkup():
             InlineKeyboardButton(text="💻 Cpu", callback_data="CPT"),
             InlineKeyboardButton(text="💽 Disk", callback_data="DIT"),
         ],
-        [InlineKeyboardButton(text="•Bᴀᴄᴋ​•", callback_data="settingm")],
+        [InlineKeyboardButton(text="Back", callback_data="settingm")],
     ]
     return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
