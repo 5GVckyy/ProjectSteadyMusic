@@ -1,40 +1,38 @@
 {
-  "name": "AyiinMusic",
+  "name": "SteadyMusic",
   "description": "A Telegram Music Bot with proper functions written in Python with Pyrogram and Py-Tgcalls.",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
   "keywords": [
   "python3",
   "telegram",
   "bot",
-  "Ayiin",
-  "AyiinMusic",
   "telegram-bot",
   "pyrogram"
   ],
   "stack": "container",
   "env": {
     "API_ID": {
-      "description": "Get this value from https://my.telegram.org",
+      "description": "Dapatkan API_ID di https://my.telegram.org",
       "value": "",
       "required": true
     },
     "API_HASH": {
-      "description": "Get this value from https://my.telegram.org",
+      "description": "Dapatkan API_HASH di https://my.telegram.org",
       "value": "",
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "A Bot's token from Botfather",
+      "description": "Dapatkan Token Bot dari @Botfather",
       "value": "",
       "required": true
     },
     "DURATION_LIMIT": {
-      "description": "Duration Limit for Playout (In Mins).. Example: 60",
+      "description": "Batas Durasi untuk Play (In Mins).. Example: 60",
       "value": "60",
       "required": true
     },
     "ASSISTANT_PREFIX": {
-      "description": "Prefix for Assistant Commands.",
+      "description": "Handler Cmd Untuk  Asisten.",
       "value": ".",
       "required": true
     },
@@ -44,78 +42,58 @@
       "required": true
     },
     "MUSIC_BOT_NAME": {
-      "description": "A name for your Music Bot.",
+      "description": "Nama Sesuai Bot Musik Anda yang dibuat di @Botfather.",
       "value": "",
       "required": true
     },
     "SUPPORT_CHANNEL": {
-      "description": "Support Channel Link if you have any, Leave blank if no support. Your link must start with https://t.me/",
+      "description": "Link Channel jika ada, Biarkan kosong jika tidak ada Channel. Link Anda harus dimulai dengan https://t.me/",
       "value": "",
       "required": false
     },
     "SUPPORT_GROUP": {
-      "description": "Support Group Link if you have any, Leave blank if no support. Your link must start with https://t.me/",
+      "description": "Link Group jika ada, Biarkan kosong jika tidak ada Group. Link Anda harus dimulai dengan https://t.me/",
       "value": "",
       "required": false
     },
     "OWNER_ID": {
-      "description": "The user id(s) of user(s) whom you would like to add as a OWNER. Multiple values shall be seperated with a space.",
+      "description": "Ketik /info Di bot @MissRose_bot.",
       "value": "",
       "required": true
     },
     "STRING_SESSION1": {
-      "description": "A Pyrogram String Session. One Assistant is Compulsory.",
+      "description": "String Pyrogram. Wajib Di Akun Asisten.",
       "value": "",
       "required": true
     },
-    "STRING_SESSION2": {
-      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
-      "value": "",
-      "required": false
-    },
-    "STRING_SESSION3": {
-      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
-      "value": "",
-      "required": false
-    },
-    "STRING_SESSION4": {
-      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
-      "value": "",
-      "required": false
-    },
-    "STRING_SESSION5": {
-      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
-      "value": "",
-      "required": false
-    },
     "HEROKU_API_KEY": {
-      "description": "Your Heroku account's API key",
+      "description": "Ambil Heroku Api key Di https://dashboard.heroku.com/account",
       "value": "",
       "required": false
     },
     "HEROKU_APP_NAME": {
-      "description": "Your heroku app/bot's name",
+      "description": "Sesuaikan Sama App Appname yang awal tadi, wajib Huruf kecil semua",
       "value": "",
       "required": false
     },
     "LOG_GROUP_ID": {
-      "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Use only Group. Please don't use Channel ID.",
+      "description": "ID Grup Log Anda, tambahkan @MissRose_bot Dan Bot Anda yang dibuat di BotFather Lalu Ketik /info , Jangan lupa promosikan Bot Anda sebagai admin.",
       "value": "",
       "required": true
     },
     "SUDO_USERS": {
-      "description": "The user id(s) of user(s) whom you would like to add as a SUDO. Multiple values shall be seperated with a space.",
+      "description": "id Sudo user Untuk mengontor bot kita lain kata sebagai admin di bot kita yang bisa mengaturnya segalanya.",
       "value": "",
       "required": true
     },
     "LOG_SESSION": {
-      "description": "A Pyrogram String Session for LOGGING or u can also add STRING_SESSION1 Also.",
+      "description": "String Pyrogram. Samakan Seperti STRING_SESSION1 .",
       "value": "",
       "required": true
     },
     "UPSTREAM_REPO": {
-      "description": "If you dont know this, Leave as it is",
-      "value": "https://github.com/AyiinXd/AyiinMusic",
+      "description": "Upstream Repo Tekan /skip jika tidak tau",
+      "value": "https://github.com/5GVckyy/ProjectSteadyMusic",
       "required": true
     },
     "UPSTREAM_BRANCH": {
