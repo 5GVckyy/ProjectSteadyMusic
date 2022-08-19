@@ -82,7 +82,7 @@
       "required": true
     },
     "SUDO_USERS": {
-      "description": "id Sudo user Untuk mengontor bot kita lain kata sebagai admin di bot kita yang bisa mengaturnya segalanya.",
+      "description": "ID Sudo user Untuk mengontor bot kita lain kata sebagai admin di bot kita yang bisa mengaturnya segalanya.",
       "value": "",
       "required": true
     },
@@ -92,7 +92,7 @@
       "required": true
     },
     "UPSTREAM_REPO": {
-      "description": "Upstream Repo Tekan /skip jika tidak tau",
+      "description": "Jika Anda tidak tahu ini, Tekan /skip",
       "value": "https://github.com/5GVckyy/ProjectSteadyMusic",
       "required": true
     },
