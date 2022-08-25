@@ -169,6 +169,7 @@ async def play(_, message: Message):
             user_id,
             query,
             )
+        (
             await message.reply_photo(
                 photo="Utils/ayiin.jpg",
                 caption=(
