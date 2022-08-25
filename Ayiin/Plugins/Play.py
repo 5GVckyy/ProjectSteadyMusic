@@ -176,27 +176,49 @@ async def play(_, message: Message):
             return
         mystic = await message.reply_text("🔍 **Searching**...")
         query = message.text.split(None, 1)[1]
-        caption=(
-            f"1️⃣<b>{results[0]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>"
-        ),
-
-    buttons = search_markup(
-        results[0]["id"],
-        results[1]["id"],
-        results[2]["id"],
-        results[3]["id"],
-        results[4]["id"],
-        results[0]["duration"],
-        results[1]["duration"],
-        results[2]["duration"],
-        results[3]["duration"],
-        results[4]["duration"],
-        user_id,
-        query,
-    )
-    return await CallbackQuery.edit_message_media(
-        media=med, reply_markup=InlineKeyboardMarkup(buttons)
-    )
+results = YoutubeSearch(query, max_results=10).to_dict()
+    if int(i) == 1:
+        buttons = search_markup2(
+            results[5]["id"],
+            results[6]["id"],
+            results[7]["id"],
+            results[8]["id"],
+            results[9]["id"],
+            results[5]["duration"],
+            results[6]["duration"],
+            results[7]["duration"],
+            results[8]["duration"],
+            results[9]["duration"],
+            user_id,
+            query,
+        )
+        await CallbackQuery.edit_message_text(
+            f"6️⃣<b>{results[5]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[5]['id']})__</u>\n\n7️⃣<b>{results[6]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[6]['id']})__</u>\n\n8️⃣<b>{results[7]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[7]['id']})__</u>\n\n9️⃣<b>{results[8]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[8]['id']})__</u>\n\n🔟<b>{results[9]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[9]['id']})__</u>",
+            reply_markup=InlineKeyboardMarkup(buttons),
+        )
+        disable_web_page_preview = True
+        return
+    if int(i) == 2:
+        buttons = search_markup(
+            results[0]["id"],
+            results[1]["id"],
+            results[2]["id"],
+            results[3]["id"],
+            results[4]["id"],
+            results[0]["duration"],
+            results[1]["duration"],
+            results[2]["duration"],
+            results[3]["duration"],
+            results[4]["duration"],
+            user_id,
+            query,
+        )
+        await CallbackQuery.edit_message_text(
+            f"1️⃣<b>{results[0]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>",
+            reply_markup=InlineKeyboardMarkup(buttons),
+        )
+        disable_web_page_preview = True
+        return
 
     what = str(what)
     type = int(type)
@@ -213,7 +235,7 @@ async def play(_, message: Message):
             thumb,
             videoid,
         ) = get_yt_info_query_slider(query, query_type)
-        buttons = url_markup(
+        buttons = search_markup(
             videoid, duration_min, user_id, query, query_type
         )
         med = InputMediaPhoto(
@@ -236,7 +258,7 @@ async def play(_, message: Message):
             thumb,
             videoid,
         ) = get_yt_info_query_slider(query, query_type)
-        buttons = url_markup(
+        buttons = search_markup2(
             videoid, duration_min, user_id, query, query_type
         )
         med = InputMediaPhoto(
@@ -245,21 +267,6 @@ async def play(_, message: Message):
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
-        )
-            title,
-            duration_min,
-            duration_sec,
-            thumb,
-            videoid,
-        ) = get_yt_info_query(query)
-        await mystic.delete()
-        buttons = url_markup(
-            videoid, duration_min, message.from_user.id, query, 0
-        )
-        return await message.reply_photo(
-            photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
-            reply_markup=InlineKeyboardMarkup(buttons),
         )
 
 
@@ -441,7 +448,7 @@ async def slider_query_results(_, CallbackQuery):
             thumb,
             videoid,
         ) = get_yt_info_query_slider(query, query_type)
-        buttons = url_markup(
+        buttons = search_markup(
             videoid, duration_min, user_id, query, query_type
         )
         med = InputMediaPhoto(
@@ -464,7 +471,7 @@ async def slider_query_results(_, CallbackQuery):
             thumb,
             videoid,
         ) = get_yt_info_query_slider(query, query_type)
-        buttons = url_markup(
+        buttons = search_markup2(
             videoid, duration_min, user_id, query, query_type
         )
         med = InputMediaPhoto(
