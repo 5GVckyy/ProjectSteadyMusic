@@ -184,14 +184,23 @@ async def play(_, message: Message):
             videoid,
         ) = get_yt_info_query(query)
         await mystic.delete()
-        buttons = url_markup(
-            videoid, duration_min, message.from_user.id, query, 0
+        buttons = search_markup(
+            results[0]["id"],
+            results[1]["id"],
+            results[2]["id"],
+            results[3]["id"],
+            results[4]["id"],
+            results[0]["duration"],
+            results[1]["duration"],
+            results[2]["duration"],
+            results[3]["duration"],
+            results[4]["duration"],
+            user_id,
+            query,
         )
-        return await message.reply_photo(
-            photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
-            reply_markup=InlineKeyboardMarkup(buttons),
-        )
+        await CallbackQuery.edit_message_text(
+            f"1️⃣<b>{results[0]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>",
+            reply_markup=InlineKeyboardMarkup(buttons)
 
 
 @app.on_callback_query(filters.regex(pattern=r"MusicStream"))
