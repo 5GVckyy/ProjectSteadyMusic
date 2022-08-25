@@ -176,7 +176,76 @@ async def play(_, message: Message):
             return
         mystic = await message.reply_text("🔍 **Searching**...")
         query = message.text.split(None, 1)[1]
+        caption=(
+            f"1️⃣<b>{results[0]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>"
+        ),
+
+    buttons = search_markup(
+        results[0]["id"],
+        results[1]["id"],
+        results[2]["id"],
+        results[3]["id"],
+        results[4]["id"],
+        results[0]["duration"],
+        results[1]["duration"],
+        results[2]["duration"],
+        results[3]["duration"],
+        results[4]["duration"],
+        user_id,
+        query,
+    )
+    return await CallbackQuery.edit_message_media(
+        media=med, reply_markup=InlineKeyboardMarkup(buttons)
+    )
+
+    what = str(what)
+    type = int(type)
+    if what == "F":
+        if type == 9:
+            query_type = 0
+        else:
+            query_type = int(type + 1)
+        await CallbackQuery.answer()
         (
+            title,
+            duration_min,
+            duration_sec,
+            thumb,
+            videoid,
+        ) = get_yt_info_query_slider(query, query_type)
+        buttons = url_markup(
+            videoid, duration_min, user_id, query, query_type
+        )
+        med = InputMediaPhoto(
+            media=thumb,
+            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+        )
+        return await CallbackQuery.edit_message_media(
+            media=med, reply_markup=InlineKeyboardMarkup(buttons)
+        )
+    if what == "B":
+        if type == 0:
+            query_type = 9
+        else:
+            query_type = int(type - 1)
+        await CallbackQuery.answer()
+        (
+            title,
+            duration_min,
+            duration_sec,
+            thumb,
+            videoid,
+        ) = get_yt_info_query_slider(query, query_type)
+        buttons = url_markup(
+            videoid, duration_min, user_id, query, query_type
+        )
+        med = InputMediaPhoto(
+            media=thumb,
+            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+        )
+        return await CallbackQuery.edit_message_media(
+            media=med, reply_markup=InlineKeyboardMarkup(buttons)
+        )
             title,
             duration_min,
             duration_sec,
