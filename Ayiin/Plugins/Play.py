@@ -16,8 +16,9 @@ from Ayiin.Database import (get_active_video_chats, get_video_limit,
                             is_active_video_chat)
 from Ayiin.Decorators.assistant import AssistantAdd
 from Ayiin.Decorators.checker import checker
-from Ayiin.Decorators.logger import logging
+from Ayiin.Core.Logger.logs import LOG_CHAT
 from Ayiin.Decorators.permission import PermissionCheck
+from Ayiin.Decorators.admins import AdminRightsCheck
 from Ayiin.Inline import (livestream_markup, playlist_markup, search_markup,
                           search_markup2, url_markup, url_markup2)
 from Ayiin.Utilities.changers import seconds_to_min, time_to_seconds
