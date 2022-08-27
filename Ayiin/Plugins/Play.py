@@ -5,6 +5,7 @@ from pyrogram import filters
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 from youtube_search import YoutubeSearch
+from youtubesearchpython import VideosSearch
 
 import Ayiin
 from Ayiin import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
