@@ -1,9 +1,3 @@
-## Contact & Support Chats
-
- - [News Channel ](https://t.me/Vecekayehhh) 
-
- - [Vcky ](https://t.me/Ammuyee) 
-
 ## Customize your Steady Bot - create a clone (Deploy Heroku)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/5GVckyy/ProjectSteadyMusic)
@@ -23,8 +17,12 @@ $vi .env
 $ecs2x
 $:wq
 $ screen -S ProjectSteadyMusic
-$ bash start```
+$ bash start
+```
+## Contact & Support Chats
 
+ - [News Channel ](https://t.me/Vecekayehhh) 
+ - [Vcky ](https://t.me/Ammuyee) 
 
 [![License](https://www.gnu.org/graphics/agplv3-155x51.png)](LICENSE)   
 Steady is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
