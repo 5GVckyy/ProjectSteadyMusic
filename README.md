@@ -17,6 +17,7 @@ $ cp sample.env .env
 $vi .env
 $ecs2x
 $:wq
+$ screen -S ProjectSteadyMusic
 $ bash start
 
 ## Contact & Support Chats
