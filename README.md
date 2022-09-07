@@ -18,7 +18,7 @@ $vi .env
 $ecs2x
 $:wq
 $ screen -S ProjectSteadyMusic
-$ bash start
+$ bash start```
 
 ## Contact & Support Chats
 
