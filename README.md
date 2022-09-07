@@ -10,8 +10,8 @@ $sudo apt-get update -y
 $sudo apt-get upgrade -y
 $sudo apt-get install python3-pip ffmpeg -y
 $curl -fssL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install nodejs -y && npm i -g npm
-$ git clone https://github.com/5GVckyy/SteadyProjectMusicv3
-$ cd SteadyProjectMusicv3
+$ git clone https://github.com/5GVckyy/ProjectSteadyMusic
+$ cd ProjectSteadyMusic
 $ pip3 install -U -r requirements.txt
 $ cp sample.env .env
 $vi .env
