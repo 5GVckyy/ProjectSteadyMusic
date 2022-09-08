@@ -56,6 +56,7 @@ def url_markup2(videoid, duration, user_id):
     return buttons
 
 
+
 def search_markup(
     ID1,
     ID2,
@@ -92,13 +93,12 @@ def search_markup(
         ],
         [
             InlineKeyboardButton(
-                text="⋞⋞", callback_data=f"popat 1|{query}|{user_id}"
+                text="➡️", callback_data=f"popat 1|{query}|{user_id}"
             ),
+        ],
+        [
             InlineKeyboardButton(
                 text="Close", callback_data=f"forceclose {query}|{user_id}"
-            ),
-            InlineKeyboardButton(
-                text="⋟⋟", callback_data=f"popat 1|{query}|{user_id}"
             ),
         ],
     ]
@@ -146,13 +146,12 @@ def search_markup2(
         ],
         [
             InlineKeyboardButton(
-                text="⋞⋞", callback_data=f"popat 2|{query}|{user_id}"
+                text="⬅️", callback_data=f"popat 2|{query}|{user_id}"
             ),
+        ],
+        [
             InlineKeyboardButton(
                 text="Close", callback_data=f"forceclose {query}|{user_id}"
-            ),
-            InlineKeyboardButton(
-                text="⋟⋟", callback_data=f"popat 2|{query}|{user_id}"
             ),
         ],
     ]
