@@ -162,9 +162,9 @@ def secondary_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="More", callback_data=f"other {videoid}|{user_id}"
+                text="? ᴄʜᴀɴɴᴇʟ ?", url=f"https://t.me/vecekayehhh"
             ),
-            InlineKeyboardButton(text="Close", callback_data=f"close"),
+            InlineKeyboardButton(text="• ᴄʟᴏsᴇ •​", callback_data=f"close"),
         ],
     ]
     return buttons
@@ -198,9 +198,9 @@ def timer_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text="More", callback_data=f"other {videoid}|{user_id}"
+                text="? ᴄʜᴀɴɴᴇʟ ?", url=f"https://t.me/vecekayehhh"
             ),
-            InlineKeyboardButton(text="Close", callback_data=f"close"),
+            InlineKeyboardButton(text="• ᴄʟᴏsᴇ •​", callback_data=f"close"),
         ],
     ]
     return buttons
