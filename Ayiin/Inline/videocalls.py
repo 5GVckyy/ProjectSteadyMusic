@@ -44,10 +44,6 @@ def stream_quality_markup(videoid, duration, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="📽 360P",
-                callback_data=f"VideoStream 360|{videoid}|{duration}|{user_id}",
-            ),
-            InlineKeyboardButton(
                 text="📽 720P",
                 callback_data=f"VideoStream 720|{videoid}|{duration}|{user_id}",
             ),
