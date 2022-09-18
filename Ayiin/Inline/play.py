@@ -179,14 +179,14 @@ def secondary_markup2(videoid, user_id):
     return buttons
 
 
-def primary_markup(current_time, total_time):
+def primary_markup(videoid, user_id, current_time, total_time):
     if videoid not in db_mem:
         db_mem[videoid] = {}
     db_mem[videoid]["check"] = 2
     buttons = [
         [
             InlineKeyboardButton(
-                "? ᴄʜᴀɴɴᴇʟ ?", url="https://t.me/vecekayehhh""
+                text="? ᴄʜᴀɴɴᴇʟ ?", url=f"https://t.me/vecekayehhh"
             ),
             InlineKeyboardButton(text="• ᴄʟᴏsᴇ •​", callback_data=f"close"),
         ],
