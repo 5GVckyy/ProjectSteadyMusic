@@ -186,9 +186,9 @@ def primary_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text="More", callback_data=f"other {videoid}|{user_id}"
+                "? ᴄʜᴀɴɴᴇʟ ?", url="https://t.me/vecekayehhh""
             ),
-            InlineKeyboardButton(text="Close​", callback_data=f"close"),
+            InlineKeyboardButton(text="• ᴄʟᴏsᴇ •​", callback_data=f"close"),
         ],
     ]
     return buttons
