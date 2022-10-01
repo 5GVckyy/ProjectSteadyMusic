@@ -123,9 +123,6 @@ async def activevc(_, message: Message):
                 msg += f"\n⏸️{name}"
                 msg += f"\n   ╠Duration : {dur}"
                 msg += f"\n   ╚Requested by : {usr}\n",
-        reply_markup=InlineKeyboardMarkup(text="Close", callback_data="close")],
-        ),
-    )
         if len(msg) > 4096:
             await mystic.delete()
             filename = "queue.txt"
