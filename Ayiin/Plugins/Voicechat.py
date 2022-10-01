@@ -122,7 +122,7 @@ async def activevc(_, message: Message):
                 dur = song[2]
                 msg += f"\n⏸️{name}"
                 msg += f"\n   ╠Duration : {dur}"
-                msg += f"\n   ╚Requested by : {usr}\n",
+                msg += f"\n   ╚Requested by : {usr}\n"
         if len(msg) > 4096:
             await mystic.delete()
             filename = "queue.txt"
