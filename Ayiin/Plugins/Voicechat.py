@@ -13,7 +13,7 @@ from Ayiin import SUDOERS, app, db_mem, random_assistant
 from Ayiin.Database import (get_active_chats, get_active_video_chats,
                             get_assistant, is_active_chat, save_assistant)
 from Ayiin.Decorators.checker import checker, checkerCB
-from Ayiin.Inline import primary_markup,choose_markup
+from Ayiin.Inline import primary_markup,choose_markup, primary_markup
 from Ayiin.Utilities.assistant import get_assistant_details
 
 loop = asyncio.get_event_loop()
@@ -130,8 +130,10 @@ async def activevc(_, message: Message):
                 out_file.write(str(msg.strip()))
             await message.reply_document(
                 document=filename,
-                caption=f"**OUTPUT:**\n\n`Queued List`",
-                quote=False,
+                buttons = primary_markup()
+                caption=f"**OUTPUT:**\n\n`Queued List`"
+                ),
+                reply_markup=InlineKeyboardMarkup(buttons),
             )
             os.remove(filename)
         else:
