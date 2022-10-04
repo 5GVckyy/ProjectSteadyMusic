@@ -130,10 +130,9 @@ async def activevc(_, message: Message):
                 out_file.write(str(msg.strip()))
             await message.reply_document(
                 document=filename,
-                buttons = primary_markup()
                 caption=f"**OUTPUT:**\n\n`Queued List`"
-                ),
-                reply_markup=InlineKeyboardMarkup(buttons),
+                quote=False,
+            )
             os.remove(filename)
         else:
             await mystic.edit(msg)
