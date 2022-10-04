@@ -134,7 +134,7 @@ async def activevc(_, message: Message):
                 caption=f"**OUTPUT:**\n\n`Queued List`"
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
-            )
+            ),
             os.remove(filename)
         else:
             await mystic.edit(msg)
