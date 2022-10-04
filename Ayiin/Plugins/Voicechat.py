@@ -130,7 +130,7 @@ async def activevc(_, message: Message):
                 out_file.write(str(msg.strip()))
             await message.reply_document(
                 document=filename,
-                caption=f"**OUTPUT:**\n\n`Queued List`"
+                caption=f"**OUTPUT:**\n\n`Queued List`",
                 quote=False,
             )
             os.remove(filename)
