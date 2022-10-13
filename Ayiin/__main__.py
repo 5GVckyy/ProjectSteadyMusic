@@ -82,7 +82,7 @@ async def initiate_bot():
             status="[bold blue]Importation Completed!",
         )
     console.print(
-        "[bold green]Congrats!! Ayiin Music has started successfully!\n"
+        "[bold green]Congrats!! Steady Music has started successfully!\n"
     )
     try:
         await app.send_message(
@@ -214,7 +214,7 @@ async def initiate_bot():
             await LOG_CLIENT.join_chat("Virtualmutualangroup")
         except:
             pass
-    console.print(f"└[red] Ayiin Music Bot Completed.")
+    console.print(f"└[red] Steady Music Bot Completed.")
     if STRING1 != "None":
         await pytgcalls1.start()
     if STRING2 != "None":
