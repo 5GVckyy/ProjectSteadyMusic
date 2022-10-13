@@ -8,7 +8,7 @@ load_dotenv()
 
 get_queue = {}
 BOT_TOKEN = getenv("BOT_TOKEN")
-API_ID = int(getenv("API_ID", "4524065"))
+API_ID = getenv("API_ID")
 API_HASH = getenv("API_HASH")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "10"))
 ASSISTANT_PREFIX = list(getenv("ASSISTANT_PREFIX", ".").split())
@@ -21,7 +21,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO", "https://github.com/5GVckyy/SteadyProjectMusicv3"
+    "UPSTREAM_REPO", "https://github.com/5GVckyy/ProjectSteadyMusic"
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
